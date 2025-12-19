@@ -27,6 +27,11 @@ nav {
   z-index: 1000;
 }
 
+nav #greeting {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
 nav ul {
   display: flex;
   list-style: none;
