@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Luhith Himsara | QA Engineer | DevOps Enthusiast</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
   <nav>
-    <span id="greeting">Good Morning 🙏</span>
+    <span id="greeting">Good Morning</span>
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
@@ -84,10 +85,10 @@
       <textarea name="message" placeholder="Your Message" required></textarea>
       <button type="submit">Send Message</button>
     </form>
-    <p>Or reach me at: <a href="mailto:luhith.himsara04@gmail.com">luhith.himsara04@gmail.com</a></p>
-    <p>
-      <a href="https://www.linkedin.com/in/luhith-himsara-057962256/">LinkedIn</a> |
-      <a href="https://github.com/Luhithhimsra">GitHub</a>
+    <p>Or reach me at: <a href="mailto:luhith.himsara04@gmail.com"><i class="fas fa-envelope"></i> luhith.himsara04@gmail.com</a></p>
+    <p class="social-links">
+      <a href="https://www.linkedin.com/in/luhith-himsara-057962256/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="https://github.com/Luhithhimsra" target="_blank"><i class="fab fa-github"></i> GitHub</a>
     </p>
   </section>
 
@@ -97,13 +98,13 @@
       const greetingElement = document.getElementById('greeting');
       
       if (hour >= 5 && hour < 12) {
-        greetingElement.textContent = 'Good Morning 🙏';
+        greetingElement.textContent = 'Good Morning';
       } else if (hour >= 12 && hour < 17) {
-        greetingElement.textContent = 'Good Afternoon 🙏';
+        greetingElement.textContent = 'Good Afternoon';
       } else if (hour >= 17 && hour < 21) {
-        greetingElement.textContent = 'Good Evening 🙏';
+        greetingElement.textContent = 'Good Evening';
       } else {
-        greetingElement.textContent = 'Good Night 🙏';
+        greetingElement.textContent = 'Good Night';
       }
     }
     
