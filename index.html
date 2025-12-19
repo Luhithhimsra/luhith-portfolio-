@@ -9,7 +9,7 @@
 <body>
 
   <nav>
-    <h2>Luhith</h2>
+    <span id="greeting">Good Morning</span>
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
@@ -90,6 +90,29 @@
       <a href="https://github.com/Luhithhimsra">GitHub</a>
     </p>
   </section>
+
+  <script>
+    function updateGreeting() {
+      const hour = new Date().getHours();
+      const greetingElement = document.getElementById('greeting');
+      
+      if (hour >= 5 && hour < 12) {
+        greetingElement.textContent = 'Good Morning';
+      } else if (hour >= 12 && hour < 17) {
+        greetingElement.textContent = 'Good Afternoon';
+      } else if (hour >= 17 && hour < 21) {
+        greetingElement.textContent = 'Good Evening';
+      } else {
+        greetingElement.textContent = 'Good Night';
+      }
+    }
+    
+    // Update greeting on page load
+    updateGreeting();
+    
+    // Update greeting every minute to handle day transitions
+    setInterval(updateGreeting, 60000);
+  </script>
 
 </body>
 </html>
