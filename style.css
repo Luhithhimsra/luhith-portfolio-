@@ -75,22 +75,108 @@ nav a:hover {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(138, 43, 226, 0.1) 2px, rgba(138, 43, 226, 0.1) 4px),
+    repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(138, 43, 226, 0.1) 2px, rgba(138, 43, 226, 0.1) 4px);
+  background-color: #0a0a0f;
   color: white;
   padding: 80px 40px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  overflow: hidden;
 }
 
-.profile-photo {
+.profile-container {
+  position: relative;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-circle {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-image-wrapper {
+  position: relative;
   width: 150px;
   height: 150px;
   border-radius: 50%;
+  background: linear-gradient(135deg, #ff1493, #8a2be2);
+  padding: 4px;
+  z-index: 3;
+  box-shadow: 0 0 30px rgba(138, 43, 226, 0.6), 0 0 60px rgba(255, 20, 147, 0.4);
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 20px;
-  border: 3px solid white;
+  border: none;
+  display: block;
+}
+
+.profile-arc {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: #ff1493;
+  border-right-color: #8a2be2;
+  animation: rotate 4s linear infinite;
+}
+
+.profile-arc-1 {
+  width: 180px;
+  height: 180px;
+  top: 10px;
+  left: 10px;
+  border-width: 2px;
+  opacity: 0.8;
+  animation-duration: 3s;
+  animation-direction: normal;
+}
+
+.profile-arc-2 {
+  width: 200px;
+  height: 200px;
+  top: 0;
+  left: 0;
+  border-width: 2px;
+  opacity: 0.6;
+  animation-duration: 5s;
+  animation-direction: reverse;
+  border-top-color: #8a2be2;
+  border-right-color: #ff1493;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 30px rgba(138, 43, 226, 0.6), 0 0 60px rgba(255, 20, 147, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(138, 43, 226, 0.8), 0 0 80px rgba(255, 20, 147, 0.6);
+  }
 }
 
 .btn {
@@ -363,7 +449,11 @@ body.dark-mode nav {
 }
 
 body.dark-mode .hero {
-  background: linear-gradient(135deg, #0d1b2a, #1b263b);
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(138, 43, 226, 0.1) 2px, rgba(138, 43, 226, 0.1) 4px),
+    repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(138, 43, 226, 0.1) 2px, rgba(138, 43, 226, 0.1) 4px);
+  background-color: #0a0a0f;
 }
 
 body.dark-mode section {
