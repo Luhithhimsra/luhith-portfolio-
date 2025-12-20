@@ -465,72 +465,230 @@ section p {
   text-decoration: underline;
 }
 
-/* Contact Form */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-input, textarea {
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  width: 100%;
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-}
-button {
-  padding: 12px;
-  border: none;
-  background: #2a5298;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-button:hover {
-  background: #1e3c72;
+/* Contact Section */
+#contact {
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(138, 43, 226, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 20, 147, 0.1) 0%, transparent 50%),
+    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.03) 4px),
+    #0a0a0f;
+  background-size: 100% 100%, 100% 100%, 20px 20px, 100% 100%;
+  padding: 60px 40px;
+  margin: 40px;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Social Links */
-.social-links {
+#contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(2px 2px at 20% 30%, white, transparent),
+    radial-gradient(2px 2px at 60% 70%, white, transparent),
+    radial-gradient(1px 1px at 50% 50%, white, transparent),
+    radial-gradient(1px 1px at 80% 10%, white, transparent),
+    radial-gradient(2px 2px at 90% 40%, white, transparent),
+    radial-gradient(1px 1px at 33% 60%, white, transparent),
+    radial-gradient(1px 1px at 66% 20%, white, transparent);
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* Connect With Me Section */
+.connect-section {
+  text-align: left;
+  margin-bottom: 50px;
+  position: relative;
+  z-index: 1;
+}
+
+.connect-section h2 {
+  color: white;
+  font-size: 2em;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.connect-icons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.connect-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  position: relative;
+  z-index: 1;
+}
+
+.connect-icon:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(138, 43, 226, 0.5);
+  border-color: rgba(138, 43, 226, 0.8);
+}
+
+.connect-icon i {
+  font-size: 1.5em;
+}
+
+/* Message Form Container */
+.message-form-container {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  border-radius: 15px;
+  padding: 40px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 1;
+}
+
+.message-form-container h3 {
+  color: white;
+  text-align: center;
+  font-size: 1.8em;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  color: white;
+  font-size: 1em;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+  font-size: 1em;
+  transition: all 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: rgba(138, 43, 226, 0.8);
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 10px rgba(138, 43, 226, 0.3);
+}
+
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.send-button {
+  padding: 15px 30px;
+  border: none;
+  background: linear-gradient(90deg, #8a2be2, #4a148c);
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.1em;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+  box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4);
+}
+
+.send-button:hover {
+  background: linear-gradient(90deg, #9d3ef5, #5a1aa8);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(138, 43, 226, 0.6);
+}
+
+.send-button i {
+  font-size: 1em;
+}
+
+/* Contact Footer */
+.contact-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 1;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.contact-footer p {
+  color: white;
+  margin: 0;
+  font-size: 0.95em;
+}
+
+.contact-footer .fa-heart {
+  color: #ff1493;
+  margin: 0 5px;
+}
+
+.footer-social {
   display: flex;
   gap: 20px;
   align-items: center;
-  margin-top: 15px;
 }
 
-.social-links a {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: #2a5298;
+.footer-social a {
+  color: white;
+  font-size: 1.3em;
   text-decoration: none;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
-.social-links a:hover {
-  color: #1e3c72;
-  transform: translateY(-2px);
-}
-
-.social-links a i {
-  font-size: 1.2em;
-}
-
-#contact a[href^="mailto:"] {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: #2a5298;
-  text-decoration: none;
-}
-
-#contact a[href^="mailto:"]:hover {
-  color: #1e3c72;
-}
-
-#contact a[href^="mailto:"] i {
-  font-size: 1.1em;
+.footer-social a:hover {
+  color: #8a2be2;
+  transform: translateY(-3px);
 }
 
 /* Dark Mode Styles */
@@ -676,12 +834,20 @@ body.dark-mode .social-links a:hover {
   color: #6bb3ff;
 }
 
-body.dark-mode #contact a[href^="mailto:"] {
-  color: #4a9eff;
+body.dark-mode #contact {
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(138, 43, 226, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 20, 147, 0.1) 0%, transparent 50%),
+    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.03) 4px),
+    #0a0a0f;
 }
 
-body.dark-mode #contact a[href^="mailto:"]:hover {
-  color: #6bb3ff;
+body:not(.dark-mode) #contact {
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(138, 43, 226, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 20, 147, 0.1) 0%, transparent 50%),
+    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.03) 4px),
+    #0a0a0f;
 }
 
 body.dark-mode .project-card a {
@@ -772,6 +938,38 @@ body.dark-mode .project-card a:hover {
   section {
     margin: 20px;
     padding: 20px;
+  }
+
+  #contact {
+    margin: 20px;
+    padding: 40px 20px;
+  }
+
+  .connect-section h2 {
+    font-size: 1.6em;
+  }
+
+  .connect-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .connect-icon i {
+    font-size: 1.3em;
+  }
+
+  .message-form-container {
+    padding: 30px 20px;
+  }
+
+  .message-form-container h3 {
+    font-size: 1.5em;
+  }
+
+  .contact-footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
   }
 
   #what-i-do {
@@ -866,6 +1064,70 @@ body.dark-mode .project-card a:hover {
   section {
     margin: 15px;
     padding: 15px;
+  }
+
+  #contact {
+    margin: 15px;
+    padding: 30px 15px;
+  }
+
+  .connect-section h2 {
+    font-size: 1.4em;
+    margin-bottom: 20px;
+  }
+
+  .connect-icons {
+    gap: 15px;
+  }
+
+  .connect-icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .connect-icon i {
+    font-size: 1.2em;
+  }
+
+  .message-form-container {
+    padding: 25px 15px;
+  }
+
+  .message-form-container h3 {
+    font-size: 1.3em;
+    margin-bottom: 20px;
+  }
+
+  .contact-form {
+    gap: 20px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 10px 12px;
+    font-size: 0.9em;
+  }
+
+  .send-button {
+    padding: 12px 25px;
+    font-size: 1em;
+  }
+
+  .contact-footer {
+    margin-top: 30px;
+    padding-top: 20px;
+  }
+
+  .contact-footer p {
+    font-size: 0.85em;
+  }
+
+  .footer-social {
+    gap: 15px;
+  }
+
+  .footer-social a {
+    font-size: 1.2em;
   }
 
   .skill-card {
