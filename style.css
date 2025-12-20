@@ -117,6 +117,8 @@ nav a:hover {
   z-index: 3;
   box-shadow: 0 0 30px rgba(138, 43, 226, 0.6), 0 0 60px rgba(255, 20, 147, 0.4);
   animation: pulse-glow 3s ease-in-out infinite;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
 
 .profile-photo {
@@ -135,6 +137,8 @@ nav a:hover {
   border-top-color: #ff1493;
   border-right-color: #8a2be2;
   animation: rotate 4s linear infinite;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .profile-arc-1 {
@@ -584,6 +588,47 @@ body.dark-mode .project-card a:hover {
 
 /* Responsive */
 @media (max-width: 768px) {
+  .hero {
+    padding: 60px 20px;
+  }
+
+  .profile-circle {
+    width: 180px;
+    height: 180px;
+  }
+
+  .profile-image-wrapper {
+    width: 130px;
+    height: 130px;
+    padding: 3px;
+  }
+
+  .profile-arc-1 {
+    width: 160px;
+    height: 160px;
+    top: 10px;
+    left: 10px;
+  }
+
+  .profile-arc-2 {
+    width: 180px;
+    height: 180px;
+    top: 0;
+    left: 0;
+  }
+
+  .profile-container {
+    margin-bottom: 25px;
+  }
+
+  .hero h1 {
+    font-size: 1.8em;
+  }
+
+  .hero p {
+    font-size: 0.9em;
+  }
+
   .projects-container {
     flex-direction: column;
   }
@@ -599,6 +644,7 @@ body.dark-mode .project-card a:hover {
   }
   nav {
     flex-wrap: wrap;
+    padding: 15px 20px;
   }
   nav > div {
     flex-wrap: wrap;
@@ -615,5 +661,106 @@ body.dark-mode .project-card a:hover {
     width: 35px;
     height: 35px;
     font-size: 1em;
+  }
+
+  section {
+    margin: 20px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 40px 15px;
+  }
+
+  .profile-circle {
+    width: 160px;
+    height: 160px;
+  }
+
+  .profile-image-wrapper {
+    width: 120px;
+    height: 120px;
+    padding: 3px;
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.5), 0 0 40px rgba(255, 20, 147, 0.3);
+  }
+
+  .profile-arc-1 {
+    width: 140px;
+    height: 140px;
+    top: 10px;
+    left: 10px;
+  }
+
+  .profile-arc-2 {
+    width: 160px;
+    height: 160px;
+    top: 0;
+    left: 0;
+  }
+
+  .hero h1 {
+    font-size: 1.5em;
+    margin-top: 10px;
+  }
+
+  .hero p {
+    font-size: 0.85em;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.9em;
+  }
+
+  section {
+    margin: 15px;
+    padding: 15px;
+  }
+
+  .skill-card {
+    padding: 20px;
+  }
+
+  .tech-tags {
+    gap: 6px;
+  }
+
+  .tech-tag {
+    font-size: 0.75em;
+    padding: 5px 10px;
+  }
+}
+
+/* Optimize animations for mobile performance */
+@media (max-width: 768px) {
+  .profile-arc {
+    animation-duration: 4s;
+  }
+  
+  .profile-arc-1 {
+    animation-duration: 3.5s;
+  }
+  
+  .profile-arc-2 {
+    animation-duration: 5.5s;
+  }
+  
+  .profile-image-wrapper {
+    animation-duration: 4s;
+  }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .profile-arc,
+  .profile-image-wrapper {
+    animation: none;
+  }
+  
+  .profile-arc-1,
+  .profile-arc-2 {
+    animation: none;
   }
 }
