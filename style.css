@@ -324,6 +324,87 @@ section p {
   box-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
 }
 
+/* What I Do Section */
+#what-i-do {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  border-radius: 15px;
+  padding: 30px;
+  margin: 40px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+#what-i-do h2 {
+  color: white;
+  margin-bottom: 30px;
+  font-size: 1.8em;
+}
+
+.what-i-do-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.what-i-do-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.what-i-do-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateX(5px);
+  border-color: rgba(138, 43, 226, 0.3);
+}
+
+.what-i-do-icon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, rgba(138, 43, 226, 0.2), rgba(255, 20, 147, 0.2));
+}
+
+.what-i-do-icon i {
+  font-size: 1.5em;
+  color: #8a2be2;
+}
+
+.what-i-do-item:nth-child(1) .what-i-do-icon i {
+  color: #4ade80;
+}
+
+.what-i-do-item:nth-child(2) .what-i-do-icon i {
+  color: #ff1493;
+}
+
+.what-i-do-item:nth-child(3) .what-i-do-icon i {
+  color: #4a9eff;
+}
+
+.what-i-do-item:nth-child(4) .what-i-do-icon i {
+  color: #8a2be2;
+}
+
+.what-i-do-item:nth-child(5) .what-i-do-icon i {
+  color: #ffa500;
+}
+
+.what-i-do-item p {
+  color: white;
+  margin: 0;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
 /* Legacy skill styles for backward compatibility */
 .skill {
   margin-bottom: 15px;
@@ -526,6 +607,19 @@ body.dark-mode .skill-card {
   border: 1px solid rgba(138, 43, 226, 0.2);
 }
 
+body.dark-mode #what-i-do {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  border: 1px solid rgba(138, 43, 226, 0.2);
+}
+
+body.dark-mode #what-i-do h2 {
+  color: white;
+}
+
+body:not(.dark-mode) #what-i-do {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+}
+
 body.dark-mode .tech-tag {
   background: rgba(138, 43, 226, 0.2);
   color: white;
@@ -667,6 +761,33 @@ body.dark-mode .project-card a:hover {
     margin: 20px;
     padding: 20px;
   }
+
+  #what-i-do {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  #what-i-do h2 {
+    font-size: 1.5em;
+  }
+
+  .what-i-do-item {
+    padding: 12px;
+    gap: 15px;
+  }
+
+  .what-i-do-icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .what-i-do-icon i {
+    font-size: 1.3em;
+  }
+
+  .what-i-do-item p {
+    font-size: 0.9em;
+  }
 }
 
 @media (max-width: 480px) {
@@ -730,6 +851,34 @@ body.dark-mode .project-card a:hover {
   .tech-tag {
     font-size: 0.75em;
     padding: 5px 10px;
+  }
+
+  #what-i-do {
+    margin: 15px;
+    padding: 15px;
+  }
+
+  #what-i-do h2 {
+    font-size: 1.3em;
+    margin-bottom: 20px;
+  }
+
+  .what-i-do-item {
+    padding: 10px;
+    gap: 12px;
+  }
+
+  .what-i-do-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .what-i-do-icon i {
+    font-size: 1.2em;
+  }
+
+  .what-i-do-item p {
+    font-size: 0.85em;
   }
 }
 
