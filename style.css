@@ -203,6 +203,9 @@ section {
   padding: 30px;
   border-radius: 10px;
   transition: background-color 0.3s ease, color 0.3s ease;
+  width: calc(100% - 80px);
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 section h2 {
@@ -331,6 +334,9 @@ section p {
   padding: 30px;
   margin: 40px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  width: calc(100% - 80px);
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 #what-i-do h2 {
@@ -347,13 +353,15 @@ section p {
 
 .what-i-do-item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 20px;
   padding: 15px;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 10px;
   transition: all 0.3s ease;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .what-i-do-item:hover {
@@ -403,6 +411,9 @@ section p {
   margin: 0;
   font-size: 1em;
   line-height: 1.5;
+  flex: 1;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 /* Legacy skill styles for backward compatibility */
@@ -774,11 +785,13 @@ body.dark-mode .project-card a:hover {
   .what-i-do-item {
     padding: 12px;
     gap: 15px;
+    flex-wrap: wrap;
   }
 
   .what-i-do-icon {
     width: 45px;
     height: 45px;
+    flex-shrink: 0;
   }
 
   .what-i-do-icon i {
@@ -787,6 +800,20 @@ body.dark-mode .project-card a:hover {
 
   .what-i-do-item p {
     font-size: 0.9em;
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .what-i-do-container {
+    gap: 15px;
+  }
+
+  section h2 {
+    font-size: 1.5em;
+  }
+
+  nav #greeting {
+    font-size: 1em;
   }
 }
 
@@ -866,11 +893,13 @@ body.dark-mode .project-card a:hover {
   .what-i-do-item {
     padding: 10px;
     gap: 12px;
+    flex-wrap: wrap;
   }
 
   .what-i-do-icon {
     width: 40px;
     height: 40px;
+    flex-shrink: 0;
   }
 
   .what-i-do-icon i {
@@ -879,6 +908,29 @@ body.dark-mode .project-card a:hover {
 
   .what-i-do-item p {
     font-size: 0.85em;
+    flex: 1;
+    min-width: 0;
+    word-wrap: break-word;
+  }
+
+  .what-i-do-container {
+    gap: 12px;
+  }
+
+  section h2 {
+    font-size: 1.3em;
+  }
+
+  nav #greeting {
+    font-size: 0.9em;
+  }
+
+  nav ul {
+    gap: 5px;
+  }
+
+  nav a {
+    font-size: 0.9em;
   }
 }
 
@@ -911,5 +963,89 @@ body.dark-mode .project-card a:hover {
   .profile-arc-1,
   .profile-arc-2 {
     animation: none;
+  }
+}
+
+/* Additional mobile optimizations */
+@media (max-width: 360px) {
+  .hero {
+    padding: 30px 10px;
+  }
+
+  .hero h1 {
+    font-size: 1.3em;
+  }
+
+  .hero p {
+    font-size: 0.8em;
+  }
+
+  section {
+    margin: 10px;
+    padding: 12px;
+  }
+
+  #what-i-do {
+    margin: 10px;
+    padding: 12px;
+  }
+
+  #what-i-do h2 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+  }
+
+  .what-i-do-item {
+    padding: 8px;
+    gap: 10px;
+  }
+
+  .what-i-do-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .what-i-do-icon i {
+    font-size: 1em;
+  }
+
+  .what-i-do-item p {
+    font-size: 0.8em;
+  }
+
+  .skill-card {
+    padding: 15px;
+  }
+
+  .tech-tag {
+    font-size: 0.7em;
+    padding: 4px 8px;
+  }
+
+  nav {
+    padding: 10px 15px;
+  }
+
+  nav #greeting {
+    font-size: 0.85em;
+  }
+
+  .btn {
+    padding: 8px 16px;
+    font-size: 0.85em;
+  }
+}
+
+/* Ensure touch targets are at least 44x44px for mobile */
+@media (max-width: 768px) {
+  .btn,
+  .theme-toggle,
+  nav a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .what-i-do-item {
+    min-height: 44px;
   }
 }
