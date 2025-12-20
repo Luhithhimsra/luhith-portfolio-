@@ -262,18 +262,57 @@
   </section>
 
   <section id="contact">
-    <h2>Contact</h2>
-    <form action="mailto:luhith.himsara04@gmail.com" method="post" enctype="text/plain">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-    <p>Or reach me at: <a href="mailto:luhith.himsara04@gmail.com"><i class="fas fa-envelope"></i> luhith.himsara04@gmail.com</a></p>
-    <p class="social-links">
-      <a href="https://www.linkedin.com/in/luhith-himsara-057962256/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-      <a href="https://github.com/Luhithhimsra" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-    </p>
+    <!-- Connect With Me Section -->
+    <div class="connect-section">
+      <h2>Connect With Me</h2>
+      <div class="connect-icons">
+        <a href="https://www.linkedin.com/in/luhith-himsara-057962256/" target="_blank" class="connect-icon">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="mailto:luhith.himsara04@gmail.com" class="connect-icon">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://github.com/Luhithhimsra" target="_blank" class="connect-icon">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://github.com/Luhithhimsra" target="_blank" class="connect-icon">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Send a Message Form -->
+    <div class="message-form-container">
+      <h3>Send a Message</h3>
+      <form action="mailto:luhith.himsara04@gmail.com" method="post" enctype="text/plain" class="contact-form">
+        <div class="form-group">
+          <label for="name">Your Name *</label>
+          <input type="text" id="name" name="name" placeholder="Pedro Machado..." required>
+        </div>
+        <div class="form-group">
+          <label for="email">Your Email *</label>
+          <input type="email" id="email" name="email" placeholder="john@gmail.com" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Your Message *</label>
+          <textarea id="message" name="message" placeholder="Hello, I'd like to talk about..." required></textarea>
+        </div>
+        <button type="submit" class="send-button">
+          <span>Send Message</span>
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </form>
+    </div>
+
+    <!-- Footer -->
+    <footer class="contact-footer">
+      <p>© 2025 Luhith Himsara. Made with <i class="fas fa-heart"></i></p>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/luhith-himsara-057962256/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/Luhithhimsra" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://github.com/Luhithhimsra" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+    </footer>
   </section>
 
   <script>
