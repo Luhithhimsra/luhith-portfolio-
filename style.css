@@ -124,6 +124,117 @@ section p {
 }
 
 /* Skills */
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 40px;
+  padding: 20px 0;
+}
+
+.tech-tag {
+  background: rgba(138, 43, 226, 0.2);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9em;
+  font-weight: 500;
+  border: 1px solid rgba(138, 43, 226, 0.3);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.tech-tag:hover {
+  background: rgba(138, 43, 226, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(138, 43, 226, 0.3);
+}
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.skill-card {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(138, 43, 226, 0.2);
+}
+
+.skill-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.skill-icon {
+  font-size: 1.5em;
+  color: #8a2be2;
+}
+
+.skill-card h3 {
+  color: white;
+  font-size: 1.3em;
+  margin: 0;
+}
+
+.skill-item {
+  margin-bottom: 20px;
+}
+
+.skill-item:last-child {
+  margin-bottom: 0;
+}
+
+.skill-name-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.skill-name {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95em;
+  font-weight: 500;
+}
+
+.skill-percentage {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85em;
+  font-weight: 600;
+}
+
+.skill-bar {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  height: 8px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.skill-progress {
+  background: linear-gradient(90deg, #8a2be2, #ff1493);
+  height: 100%;
+  border-radius: 10px;
+  transition: width 1s ease-out;
+  box-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
+}
+
+/* Legacy skill styles for backward compatibility */
 .skill {
   margin-bottom: 15px;
 }
@@ -284,6 +395,53 @@ body.dark-mode .progress {
   background: #4a9eff;
 }
 
+/* Light mode styles for skills section */
+body:not(.dark-mode) .skill-card {
+  background: linear-gradient(135deg, #2d2d44, #1e2a3e);
+}
+
+body:not(.dark-mode) .tech-tag {
+  background: rgba(138, 43, 226, 0.15);
+  color: #333;
+  border-color: rgba(138, 43, 226, 0.3);
+}
+
+body:not(.dark-mode) .tech-tag:hover {
+  background: rgba(138, 43, 226, 0.25);
+}
+
+body:not(.dark-mode) section {
+  background: white;
+}
+
+body:not(.dark-mode) #skills {
+  background: #1a1a2e;
+  color: white;
+}
+
+body:not(.dark-mode) #skills h2 {
+  color: white;
+}
+
+body.dark-mode #skills {
+  background: #1a1a1a;
+}
+
+body.dark-mode .skill-card {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  border: 1px solid rgba(138, 43, 226, 0.2);
+}
+
+body.dark-mode .tech-tag {
+  background: rgba(138, 43, 226, 0.2);
+  color: white;
+  border-color: rgba(138, 43, 226, 0.3);
+}
+
+body.dark-mode .tech-tag:hover {
+  background: rgba(138, 43, 226, 0.4);
+}
+
 body.dark-mode input,
 body.dark-mode textarea {
   background: #2d2d2d;
@@ -338,6 +496,16 @@ body.dark-mode .project-card a:hover {
 @media (max-width: 768px) {
   .projects-container {
     flex-direction: column;
+  }
+  .skills-container {
+    grid-template-columns: 1fr;
+  }
+  .tech-tags {
+    gap: 8px;
+  }
+  .tech-tag {
+    font-size: 0.8em;
+    padding: 6px 12px;
   }
   nav {
     flex-wrap: wrap;
