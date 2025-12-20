@@ -12,6 +12,7 @@ html {
 body {
   background: #f4f6f8;
   color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Navigation */
@@ -111,6 +112,7 @@ section {
   margin: 40px;
   padding: 30px;
   border-radius: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 section h2 {
@@ -149,7 +151,7 @@ section p {
   border-radius: 10px;
   flex: 1 1 250px;
   text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s ease, color 0.3s ease;
 }
 .project-card:hover {
   transform: translateY(-5px);
@@ -181,6 +183,7 @@ input, textarea {
   border-radius: 5px;
   border: 1px solid #ccc;
   width: 100%;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 button {
   padding: 12px;
@@ -243,18 +246,42 @@ body.dark-mode {
   color: #e0e0e0;
 }
 
+body.dark-mode nav {
+  background: #0a0a0a;
+  border-bottom: 1px solid #333;
+}
+
+body.dark-mode .hero {
+  background: linear-gradient(135deg, #0d1b2a, #1b263b);
+}
+
 body.dark-mode section {
   background: #2d2d2d;
   color: #e0e0e0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode section h2 {
+  color: #ffffff;
 }
 
 body.dark-mode .project-card {
   background: #1a1a1a;
   color: #e0e0e0;
+  border: 1px solid #333;
+}
+
+body.dark-mode .project-card:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  border-color: #444;
 }
 
 body.dark-mode .bar {
   background: #3d3d3d;
+}
+
+body.dark-mode .progress {
+  background: #4a9eff;
 }
 
 body.dark-mode input,
@@ -264,10 +291,23 @@ body.dark-mode textarea {
   border-color: #444;
 }
 
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+  color: #999;
+}
+
 body.dark-mode input:focus,
 body.dark-mode textarea:focus {
   outline: none;
-  border-color: #2a5298;
+  border-color: #4a9eff;
+}
+
+body.dark-mode button[type="submit"] {
+  background: #4a9eff;
+}
+
+body.dark-mode button[type="submit"]:hover {
+  background: #6bb3ff;
 }
 
 body.dark-mode .social-links a {
