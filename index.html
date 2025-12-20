@@ -11,12 +11,17 @@
 
   <nav>
     <span id="greeting">Good Morning</span>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+    <div style="display: flex; align-items: center; gap: 20px;">
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon" id="theme-icon"></i>
+      </button>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
   </nav>
 
   <header class="hero">
@@ -29,7 +34,8 @@
   <section id="about">
     <h2>About Me</h2>
     <p>
-      I’m a detail-driven technologist who believes quality is the foundation of great systems. With a background in QA and hands-on experience in web technologies, I’m steadily evolving toward DevOps—where automation, reliability, and continuous improvement meet. I enjoy breaking systems to understand them, then rebuilding them better, smarter, and stronger🚀.
+      I am an undergraduate at SLIIT (Sri Lanka Institute of Information Technology) with strong interest in Quality Assurance and DevOps.
+      I enjoy testing applications, improving software quality, and learning CI/CD, automation, and cloud technologies.
     </p>
   </section>
 
@@ -67,10 +73,10 @@
         <a href="https://github.com/Luhithhimsra/mortorcastleparkingIWT" target="_blank">View Code</a>
       </div>
       <div class="project-card">
-        <img src="ceyloncolony.png" alt="Honey Product Management System">
-        <h3>Honey Product Management System</h3>
-        <p>Ceylon Colony is a fully functional e-commerce web application for managing honey product sales and deliveries. It provides a simple, efficient, and user-friendly experience for both customers and administrators.</p>
-        <a href="https://github.com/Chanux605-hub/Ceylon-Colony" target="_blank">View Code</a>
+        <img src="library.png" alt="Library Management System">
+        <h3>Library Management System</h3>
+        <p>System to manage library books and users efficiently.</p>
+        <a href="https://github.com/Luhithhimsra/library-system" target="_blank">View Code</a>
       </div>
       <!-- Add more project cards -->
     </div>
@@ -97,13 +103,13 @@
       const greetingElement = document.getElementById('greeting');
       
       if (hour >= 5 && hour < 12) {
-        greetingElement.textContent = 'Good Morning 😍';
+        greetingElement.textContent = 'Good Morning';
       } else if (hour >= 12 && hour < 17) {
-        greetingElement.textContent = 'Good Afternoon 😩';
+        greetingElement.textContent = 'Good Afternoon';
       } else if (hour >= 17 && hour < 21) {
-        greetingElement.textContent = 'Good Evening 🙂‍↕️';
+        greetingElement.textContent = 'Good Evening';
       } else {
-        greetingElement.textContent = 'Good Night 😴';
+        greetingElement.textContent = 'Good Night';
       }
     }
     
@@ -112,6 +118,33 @@
     
     // Update greeting every minute to handle day transitions
     setInterval(updateGreeting, 60000);
+
+    // Dark Mode Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const body = document.body;
+
+    // Check for saved theme preference or default to light mode
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    if (currentTheme === 'dark') {
+      body.classList.add('dark-mode');
+      themeIcon.classList.remove('fa-moon');
+      themeIcon.classList.add('fa-sun');
+    }
+
+    themeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      
+      if (body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark');
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+      } else {
+        localStorage.setItem('theme', 'light');
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+      }
+    });
   </script>
 
 </body>
